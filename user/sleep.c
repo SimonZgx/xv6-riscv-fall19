@@ -9,7 +9,7 @@
 int main(int argc, char *argv[]) {
     if (argc <= 1) {
         fprintf(2, "usage: sleep [n] seconds\n");
-        exit(1);
+        exit();
     }
 
     int n = atoi(argv[1]);
