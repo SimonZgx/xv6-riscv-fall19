@@ -10,7 +10,7 @@ void filter(int pipeFd) {
 
     int p[2];
     if (pipe(p) < 0) {
-        printf("create pipe error. pid:%d\n", getpid());
+        fprintf(2, "create pipe error. pid:%d\n", getpid());
         exit();
     }
 
@@ -41,11 +41,11 @@ void filter(int pipeFd) {
     printf("prime %d\n", filterNum);
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 
     int p[2];
     if (pipe(p) < 0) {
-        printf("create pipe error\n");
+        fprintf(2, "create pipe error. pid:%d\n", getpid());
         exit();
     }
 
