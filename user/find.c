@@ -40,8 +40,6 @@ void find(const char *path, const char *target) {
         return;
     }
 
-    printf("find %s %s\n", path, target);
-
     switch (st.type) {
         case T_FILE:
             if (strcmp(filename(path), target) == 0) {
@@ -50,7 +48,7 @@ void find(const char *path, const char *target) {
             break;
         case T_DIR:
             if (pathLen + 1 > sizeof buf) {
-                printf("ls: path too long\n");
+                printf("find : path too long\n");
                 break;
             }
             strcpy(buf, path);
@@ -86,5 +84,5 @@ int main(int argc, char *argv[]) {
     }
 
     find(argv[1], argv[2]);
-    return 0;
+    exit();
 }
